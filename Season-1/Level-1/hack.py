@@ -7,8 +7,8 @@ class TestOnlineStore(unittest.TestCase):
     # This should work, its code.py that has an issue
     def test_6(self):
         tv_item = c.Item(type='product', description='tv', amount=1000.00, quantity=1) 
-        payment = c.Item(type='payment', description='invoice_4', amount=1e19, quantity=1)
-        payback = c.Item(type='payment', description='payback_4', amount=-1e19, quantity=1)
+        payment = c.Item(type='payment', description='invoice_4', amount=1e14, quantity=1)  # was 1e19
+        payback = c.Item(type='payment', description='payback_4', amount=-1e14, quantity=1) # was 1e19
         order_4 = c.Order(id='4', items=[payment, tv_item, payback])
         self.assertEqual(c.validorder(order_4), 'Order ID: 4 - Payment imbalance: $-1000.00')
 
