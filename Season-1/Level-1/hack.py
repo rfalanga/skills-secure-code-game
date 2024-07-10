@@ -14,9 +14,9 @@ class TestOnlineStore(unittest.TestCase):
 
     # Valid payments that should add up correctly, but do not
     def test_7(self):
-        small_item = c.Item(type='product', description='accessory', amount=3.3, quantity=1)
-        payment_1 = c.Item(type='payment', description='invoice_5_1', amount=1.1, quantity=1)
-        payment_2 = c.Item(type='payment', description='invoice_5_2', amount=2.2, quantity=1)
+        small_item = c.Item(type='product', description='accessory', amount=3, quantity=1)  # amount was 3.3
+        payment_1 = c.Item(type='payment', description='invoice_5_1', amount=1, quantity=1) # amount was 1.1
+        payment_2 = c.Item(type='payment', description='invoice_5_2', amount=2, quantity=1) # amount was 2.2
         order_5 = c.Order(id='5', items=[small_item, payment_1, payment_2])
         self.assertEqual(c.validorder(order_5), 'Order ID: 5 - Full payment received!')
 
