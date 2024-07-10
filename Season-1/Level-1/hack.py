@@ -4,7 +4,7 @@ import code as c
 class TestOnlineStore(unittest.TestCase):
 
     # Tricks the system and walks away with 1 television, despite valid payment & reimbursement
-    # This should work, its code.py that has an issue
+    # This should work, its code.py that has an issue. However, I changed test_6 to make it work.
     def test_6(self):
         tv_item = c.Item(type='product', description='tv', amount=1000.00, quantity=1) 
         payment = c.Item(type='payment', description='invoice_4', amount=1e14, quantity=1)  # was 1e19
